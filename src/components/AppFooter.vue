@@ -9,15 +9,11 @@ export default {
 </script>
 
 <template>
-  <header>
-    <h1>
-      Yu-Gi-Oh! API
-    </h1>
-  </header>
+  <footer>
+    FOOTER
+  </footer>
 </template>
 
 <style lang="scss" scoped>
 @use '../assets/scss/partials/variables' as *;
-
-
 </style>
