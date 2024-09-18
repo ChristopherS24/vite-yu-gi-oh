@@ -4,13 +4,12 @@ import axios from 'axios';
 export default {
   data() {
     return { 
-      
+      characters: []      
     }
-
   },
   created() {
     axios
-      .get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
+      .get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=15&offset=0')
       .then((res) => {
         this.characters = res.data.data;
       });
@@ -23,19 +22,25 @@ export default {
     
     <div class="container">
 
-      <div class="row-select">
         <!--<select name="archetype" id="archetype">
-          
         </select>-->
-
         <input type="archetype">
+
+      <div class="row-select">
+        <h2>founded</h2>
       </div>
 
       <div class="row">
-        <div >
-          main
+        <div class="card-container">
+          <div v-for="(character, i) in characters" :key="i" class="card">
+            <h2>
+              {{ character.name }}
+            </h2>
+            <h3>
+              {{ character.archetype }}
+            </h3>
+          </div>
         </div>
-
       </div>
 
     </div>
@@ -48,6 +53,10 @@ export default {
 
 main .container {
   background-color: rgb(162, 6, 6);
+}
+
+.row-select {
+  background-color: aliceblue;
 }
 
 </style>
