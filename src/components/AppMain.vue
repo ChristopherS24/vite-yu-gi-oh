@@ -33,6 +33,9 @@ export default {
       <div class="row">
         <div class="card-container">
           <div v-for="(character, i) in characters" :key="i" class="card">
+            <div class="text-center">
+              <img :src="character.image" :alt="character.name">
+            </div>
             <h2>
               {{ character.name }}
             </h2>
@@ -56,7 +59,8 @@ main .container {
 }
 
 .row-select {
-  background-color: aliceblue;
+  background-color: black;
+  color: white;
 }
 
 </style>
